@@ -1,41 +1,42 @@
 let noOfDrumButtons = document.querySelectorAll(".drum").length;
 
-for (var i = 0; i < noOfDrumButtons ; i++) {
+for (let i = 0; i < noOfDrumButtons ; i++) {
 
 document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     let buttonInnerHTML = this.innerHTML;
 
     switch (buttonInnerHTML) {
         case "w":
-            var audio = new Audio('Drumkit/sounds/tom-1.mp3');
-            audio.play()
+            let tom_1 = new Audio('Drumkit/sounds/tom-1.mp3');
+            tom_1.play()
             break;
         case "a":
-            var audio = new Audio('Drumkit/sounds/tom-2.mp3');
+            let tom_2 = new Audio('Drumkit/sounds/tom-2.mp3');
             audio.play()
             break;
         case "s":
-            var audio = new Audio('Drumkit/sounds/tom-3.mp3');
-            audio.play()
+            let tom_3 = new Audio('Drumkit/sounds/tom-3.mp3');
+            tom_3.play()
             break;
         case "d":
-            var audio = new Audio('Drumkit/sounds/tom-4.mp3');
-            audio.play()
+            let tom_4 = new Audio('Drumkit/sounds/tom-4.mp3');
+            tom_4.play()
             break;
         case "j":
-            var audio = new Audio('Drumkit/sounds/crash.mp3');
-            audio.play()
+            let crash = new Audio('Drumkit/sounds/crash.mp3');
+            crash.play()
             break;
         case "k":
-            var audio = new Audio('Drumkit/sounds/kick-bass.mp3');
-            audio.play()
+            let kick_bass = new Audio('Drumkit/sounds/kick-bass.mp3');
+            kick_bass.play()
             break;
         case "l":
-            var audio = new Audio('Drumkit/sounds/snare.mp3');
-            audio.play()
+            let snare = new Audio('Drumkit/sounds/snare.mp3');
+            snare.play()
             break;
     
         default:
+            console.log(buttonInnerHTML.innerHTML)
             break;
     }
 })
