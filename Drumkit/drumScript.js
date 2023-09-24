@@ -1,28 +1,3 @@
-// Detecting button press
-
-let noOfDrumButtons = document.querySelectorAll(".drum").length;
-
-for (let i = 0; i < noOfDrumButtons ; i++) {
-
-document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-    let buttonInnerHTML = this.innerHTML;
-    makeSound(key);
-    
-})
-}
-
-// Remember, 'this' is like saying 'THIS thing in particular'
-// Should we switch statement this instead of if/else?
-/*var audio = new Audio('Drumkit/sounds/tom-1.mp3');
-    audio.play(); */
-
-
-// Detecting keyboard press
-
-document.addEventListener("keydown", function(e) {
-    makeSound(e.key)
-})
-
 function makeSound(key) {
     switch (key) {
         case "w":
@@ -58,3 +33,28 @@ function makeSound(key) {
             console.log(buttonInnerHTML.innerHTML)
             break;
 }}
+
+// Detecting button press, looping through the buttons to get all of them.
+
+let noOfDrumButtons = document.querySelectorAll(".drum").length;
+
+for (let i = 0; i < noOfDrumButtons ; i++) {
+
+document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    let buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+    
+})
+}
+
+// Detecting keyboard press
+
+document.addEventListener("keydown", function(e) {
+    makeSound(e.key)
+})
+
+// Remember, 'this' is like saying 'THIS thing in particular'
+
+/* Below is the Constructor function to create the Audio objects
+let audio = new Audio('Drumkit/sounds/tom-1.mp3');
+    audio.play(); */
