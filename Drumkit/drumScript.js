@@ -1,18 +1,37 @@
+// Detecting button press
+
 let noOfDrumButtons = document.querySelectorAll(".drum").length;
 
 for (let i = 0; i < noOfDrumButtons ; i++) {
 
 document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     let buttonInnerHTML = this.innerHTML;
+    makeSound(key);
+    
+})
+}
 
-    switch (buttonInnerHTML) {
+// Remember, 'this' is like saying 'THIS thing in particular'
+// Should we switch statement this instead of if/else?
+/*var audio = new Audio('Drumkit/sounds/tom-1.mp3');
+    audio.play(); */
+
+
+// Detecting keyboard press
+
+document.addEventListener("keydown", function(e) {
+    makeSound(e.key)
+})
+
+function makeSound(key) {
+    switch (key) {
         case "w":
             let tom_1 = new Audio('Drumkit/sounds/tom-1.mp3');
             tom_1.play()
             break;
         case "a":
             let tom_2 = new Audio('Drumkit/sounds/tom-2.mp3');
-            audio.play()
+            tom_2.play()
             break;
         case "s":
             let tom_3 = new Audio('Drumkit/sounds/tom-3.mp3');
@@ -38,11 +57,4 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function() {
         default:
             console.log(buttonInnerHTML.innerHTML)
             break;
-    }
-})
-}
-
-// Remember, 'this' is like saying 'THIS thing in particular'
-// Should we switch statement this instead of if/else?
-/*var audio = new Audio('Drumkit/sounds/tom-1.mp3');
-    audio.play(); */
+}}
