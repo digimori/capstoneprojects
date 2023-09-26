@@ -43,6 +43,7 @@ for (let i = 0; i < noOfDrumButtons ; i++) {
 document.querySelectorAll(".drum")[i].addEventListener("click", function() {
     let buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
     
 })
 }
@@ -50,8 +51,19 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function() {
 // Detecting keyboard press
 
 document.addEventListener("keydown", function(e) {
-    makeSound(e.key)
+    makeSound(e.key);
+    buttonAnimation(e.key)
 })
+
+function buttonAnimation(currentKey) {
+    // Lights up the button on press/click as they're both passed into the event listener anonymous functions
+   let activeButton = document.querySelector(`.${currentKey}`);
+    activeButton.classList.add("pressed");
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 150);
+}
+
 
 // Remember, 'this' is like saying 'THIS thing in particular'
 
