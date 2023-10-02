@@ -1,0 +1,23 @@
+
+
+.btn { 
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    background-color: aquamarine;
+    color: blueviolet;
+    /* transition properties for the button
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    transition-delay: 0s;*/
+    transition: transform 0.3s ease-in; 
+}
+
+/* This pushes the button upwards on hover by 10px */
+.btn:hover {
+    transform: translateY(-10px);
+    background-color: aqua;
+    color: antiquewhite;
+}
+
