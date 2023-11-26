@@ -1,0 +1,53 @@
+BASH/Shell.
+
+Kernel is the program that interfaces with the hardware and is basically the core of your OS,
+vs the Shell, which is the user interface. 
+
+examples:
+GUI (Graphical user interface)
+- So, when you open up windows explorer/Mac finder, this is using a GUI to display everything.
+
+CLI (Command Line Interface):
+- Using Bash (Bourne Again SHell) instead within UNIX.
+
+Command Line gives greater control than the GUI. 
+
+Command Line techniques and directory navigation:
+List Files and Directories (ls):
+- ls (this will list everything in the current directory when typed on its own)
+- ls CSSFlag (this will list everything in the CSSFlag folder that we have [cssflag.html flagstyle.css])
+
+Change Directory (cd): 
+- cd Dicee (as an example, will change directories into the Dicee folder). 
+- cd ../ (Will take us back up to the root, going up a level)
+- You can drill further down so like, cd Dicee/NextOneDown, but if there are many layers, this can get very long and cumbersome.
+- cd ~ will take you back up into the root on Windows/Linux/Mac, so in this case with gitpod, it's actually up further than /workspace
+
+- Neat trick: Hold down alt to be able to click on command line to edit it (Useful for if you've made a typo in your bash commands)
+- Ctrl + a will put you at the front, Ctrl + E will put you at the end.
+- Ctrl + U clears the whole line.
+
+Creating, Opening and Removing files and directories through the command line:
+- Using touch, open, start and rm.
+- mkdir folderName (making directory/folder, you can use 'cd FileName' to change into it)
+- touch fileName (making a file)
+- open fileName (open the file from the CLI with Mac), start FileName(open file from CLI on Windows)
+- This can also be used to open a file with a specific application on a Desktop, you just need a flag:
+  - For Mac: 'open -a /Applications/AppName .app FileName
+  - For Windows, open a file whilst in VSCode: code Filename  
+
+- Deleting files:
+ - rm - By itself will remove the file you're currently in.
+ - To be specific: rm fileName
+- Removing multiples:
+  - cd into the directory you want to remove them from (to check which directory you're in, use 'pwd' [Print working directory])
+  - rm * (the star means 'all').
+
+Deleting Directories:
+- rm -r directoryName/ (This will remove the directory and ALL of the files and folders within it.)
+- rf flag is like a git Force. Be very very careful when using this.
+
+For further reading: https://www.learnenough.com/command-line-tutorial
+The cons of this method are that you don't have the GUI to protect you. There are some prompts to mitigate this, but not with everything.
+Just remember to always check where you are before performing any destructive commands.
+
